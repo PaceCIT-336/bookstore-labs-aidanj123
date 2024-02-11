@@ -17,7 +17,9 @@
 $cart = explode('|', htmlentities($_POST['cart']));
 $cartItems = count($cart); // number of items in the cart
 $price = htmlentities($_POST['total']);
-
+$tax = $price * 0.04;
+$average = ($price/$cartItems);
+$totalPrice = $price + $tax;
 
 //calculate average price
 
@@ -25,18 +27,20 @@ $price = htmlentities($_POST['total']);
 echo "<h2>Cart</h2><div class=\"table\"><div class=\"row header\"><div class=\"cell\">Title</div><div class=\"cell\">Price</div></div>";
 for ($i = 0; $i < count($cart); $i++) {
     $title = $cart[$i];
-    echo "<div class=\"row\"><div class=\"cell\">$title</div><div class=\"cell\">$</div></div>";
+    echo "<div class=\"row\"><div class=\"cell\">$title</div><div class=\"cell\">$$average</div></div>";
 }
 // calculate tax and echo it in a new table row 
 
-$tax = $price * 0.04;
-$totalPrice = $tax + $price;
-echo "<div class=\"row\"><div class=\"cell\">Tax:</div><div class=\"cell\">$$tax</div></div>";
+echo "<div class=\"row summary\"><div class=\"cell\">Tax:</div><div class=\"cell\">$$tax</div></div>";
 echo "<div class=\"row summary\"><div class=\"cell\">Total Price:</div><div class=\"cell\">$$totalPrice</div></div>";
 
 // thank the user for their purchase
-
-
+$name = "Aidan";
+if ($price > 0) {
+echo "Thank you for your purchase $name!";
+} else {
+echo "<a href='index.php'>Shop</a>";
+}
 // this clears the session and ensures the cart is emptied for future shopping
 session_start();
 session_unset();
