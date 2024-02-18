@@ -31,7 +31,7 @@ for ($i = 0; $i < count($cart); $i++) {
 
 $tax = $price * 0.04;
 $totalPrice = $tax + $price;
-echo "<div class=\"row\"><div class=\"cell\">Tax:</div><div class=\"cell\">$$tax</div></div>";
+echo "<div class=\"row summary\"><div class=\"cell\">Tax:</div><div class=\"cell\">$$tax</div></div>";
 echo "<div class=\"row summary\"><div class=\"cell\">Total Price:</div><div class=\"cell\">$$totalPrice</div></div>";
 
 // thank the user for their purchase

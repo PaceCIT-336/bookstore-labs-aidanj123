@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
     <?php session_start();
     include_once("cart.php"); ?>
+    include_once("books.php"); ?>
 </head>
 
 <body>
