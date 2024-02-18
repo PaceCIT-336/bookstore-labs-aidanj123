@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
     <?php session_start();
+    include_once("books.php");
     include_once("cart.php"); ?>
-    include_once("books.php"); ?>
 </head>
 
 <body>
