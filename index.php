@@ -23,14 +23,14 @@
                 
                 print "
                 <section class='tile'>
-                    <img src=\'$item: $image_location\'>
-                    <h3>\'$item: $title\'</h3>
-                    <p>\'$item: $author\'<br>
-                        \'$item: $blurb\'</p>
-                    <p>$60</p>
+                    <img src=\'$item->image_location\'>
+                    <h3>\'$item->title\'</h3>
+                    <p>\'$item->author\'<br>
+                        \'$item->blurb\'</p>
+                    <p>\'$item->price\'</p>
                     <form name='phpbookform' id='phpbookform' action='' method='POST'>
-                        <input type='hidden' name='title' value=\'$item: $title\'>
-                        <input type='hidden' name='price' value=\'$item: $price\'>
+                        <input type='hidden' name='title' value=\'$item->title\'>
+                        <input type='hidden' name='price' value=\'$item->price\'>
                         <button type='submit'>Add to Cart</button>
                     </form>
                 </section>";
