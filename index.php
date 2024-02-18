@@ -17,7 +17,27 @@
     </header>
     <main class="container shop">
         <div class="container">
-        <section class="tile">
+        <?php
+            foreach($books as $item)
+            {
+                
+                print "
+                <section class='tile'>
+                    <img src=\'$item: $image_location\'>
+                    <h3>\'$item: $title\'</h3>
+                    <p>\'$item: $author\'<br>
+                        \'$item: $blurb\'</p>
+                    <p>$60</p>
+                    <form name='phpbookform' id='phpbookform' action='' method='POST'>
+                        <input type='hidden' name='title' value=\'$item: $title\'>
+                        <input type='hidden' name='price' value=\'$item: $price\'>
+                        <button type='submit'>Add to Cart</button>
+                    </form>
+                </section>";
+    
+            }
+        ?>
+        <!-- <section class="tile">
             <img src="assets/imgs/learningphp.jpg">
             <h3>Learning PHP, MySQL & JavaScript</h3>
             <p>Robin Nixon.<br>
@@ -29,6 +49,7 @@
                 <button type="submit">Add to Cart</button>
             </form>
         </section>
+
         <section class="tile">
             <img src="assets/imgs/learningpython.jpg">
             <h3>Learning Python</h3>
@@ -78,7 +99,7 @@
         </form>
         <form id="clearform" name="clearform" action="" method="POST">
             <button id="clearCart" name="clear" value="clear">Clear Cart</button>
-        </form>
+        </form> -->
     </aside>
     </main>
 </body>
