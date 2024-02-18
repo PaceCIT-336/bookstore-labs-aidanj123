@@ -47,6 +47,8 @@
             $books[] = $object2; 
             $books[] = $object3; 
             $books[] = $object4; 
+
+            print_r ($books);
         ?>
     </body>
 </html>
