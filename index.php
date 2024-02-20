@@ -37,7 +37,21 @@
     
             }
         ?>
-    </aside>
+        <aside id="cart">
+            <img src="assets/imgs/cart.png">
+            <p id="cartSummary">
+                Items: <?php echo count($_SESSION["items"]); ?><br><br>
+                Total: $<?php echo $_SESSION["total"]; ?>
+            </p>
+            <form id="checkoutform" name="checkoutform" action="checkout.php" method="POST">
+                <input type="hidden" name="cart" id="cartInput" value="<?php echo implode("|", $_SESSION["items"]); ?>">
+                <input type="hidden" name="total" id="totalInput" value="<?php echo $_SESSION["total"]; ?>">
+                <button id="checkout">Checkout</button>
+            </form>
+            <form id="clearform" name="clearform" action="" method="POST">
+                <button id="clearCart" name="clear" value="clear">Clear Cart</button>
+            </form>
+        </aside>
     </main>
 </body>
 
