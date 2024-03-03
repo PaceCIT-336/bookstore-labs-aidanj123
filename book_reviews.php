@@ -20,8 +20,15 @@
         <div>
             <h2>Book Reviews</h2>
         <?php //include your code here
+            $id = $_GET['id'];
             
+            $stmt = $pdo->query("SELECT * FROM reviews WHERE BookID=:$id");
+            while ($row = $stmt->fetch()) {
+                echo $row['review']."<br />\n";
+            }
 
+            // $rating = htmlspecialchars($row['Rating']);
+            // $review = htmlspecialchars($row['Review']);
 
         ?>
 		<a href="index.php"><button>Back</button></a>
