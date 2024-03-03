@@ -4,7 +4,7 @@
     <body>
         <?php
             class Book {
-                public $title, $author, $blurb, $image_location, $price;
+                public $id, $title, $author, $blurb, $image_location, $price;
                     function class__construct($title, $author, $blurb, $image_location, $price) {
                         $this->title = $title;
                         $this->author = $author;
@@ -30,6 +30,7 @@
             $price = htmlspecialchars($row['Price']);
             
             $object1  = new Book();
+            $object1->id = $id;
             $object1->title = $title;
             $object1->author = $author;
             $object1->blurb = $description;
