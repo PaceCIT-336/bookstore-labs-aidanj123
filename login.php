@@ -2,6 +2,7 @@
 <head></head>
 <body>
     <?php
+        $host = 'localhost';
         $data = 'bookstore'; 
         $user = 'webapp'; 
         $pass = '/IZP@@*_P@62WKIj'; 
