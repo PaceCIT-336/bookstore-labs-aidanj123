@@ -29,7 +29,7 @@
             $image_path = htmlspecialchars($row['ImagePath']);
             $price = htmlspecialchars($row['Price']);
             
-            $object1[]  = new Book();
+            $object1  = new Book();
             $object1->title = $title;
             $object1->author = $author;
             $object1->blurb = $description;
