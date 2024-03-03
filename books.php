@@ -15,39 +15,28 @@
 
             
         }
-        $object1 = new Book();
-            $object1->title = "Learning PHP, MySQL & JavaScript";
-            $object1->author = "Robin Nixon";
-            $object1->blurb = "A step-by-step guide to creating dynamic websites.";
-            $object1->image_location = "assets/imgs/learningphp.jpg";
-            $object1->price = "60";
+        
+        require_once 'login.php';
 
-            $object2 = new Book();
-            $object2->title = "Learning Python";
-            $object2->author = "Mark Lutz";
-            $object2->blurb = "Powerful Object-Oriented Programming";
-            $object2->image_location = "assets/imgs/learningpython.jpg";
-            $object2->price = "49";
+        $query = "SELECT * FROM books";
+        $result = $pdo->query($query);
 
-            $object3 = new Book();
-            $object3->title = "HTML & CSS 9th Ed";
-            $object3->author = "Joe Casabona";
-            $object3->blurb = "Design and build webpages.";
-            $object3->image_location = "assets/imgs/htmlcss.jpg";
-            $object3->price = "35";
-
-            $object4 = new Book();
-            $object4->title = "American Heritage Dictionary";
-            $object4->author = "";
-            $object4->blurb = "The English Language";
-            $object4->image_location = "assets/imgs/dictionary.jpg";
-            $object4->price = "55";
-
+        while ($row = $result->fetch()) {
+            $id = htmlspecialchars($row['BookID']);
+            $title = htmlspecialchars($row['Title']);
+            $author = htmlspecialchars($row['Author']);
+            $description = htmlspecialchars($row['Description']);
+            $image_path = htmlspecialchars($row['ImagePath']);
+            $price = htmlspecialchars($row['Price']);
+            
+            $object1[]  = new Book();
+            $object1->title = $title;
+            $object1->author = $author;
+            $object1->blurb = $description;
+            $object1->image_location = $image_path;
+            $object1->price = $price;
             $books[] = $object1; 
-            $books[] = $object2; 
-            $books[] = $object3; 
-            $books[] = $object4; 
-
+        }
         ?>
     </body>
 </html>
