@@ -22,7 +22,7 @@
         <?php //include your code here
             $id = $_GET['id'];
             
-            $stmt = $pdo->query("SELECT * FROM reviews WHERE BookID=:$id");
+            $stmt = $pdo->query("SELECT * FROM reviews WHERE BookID=:id");
             while ($row = $stmt->fetch()) {
                 echo $row['review']."<br />\n";
             }
