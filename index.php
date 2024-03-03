@@ -34,6 +34,7 @@
                         <button type='submit'>Add to Cart</button>
                         
                     </form>
+                    <br><a href=\"book_reviews.php?id=$id\"><button>See Reviews</button></a>
                 </section>";
                 $id = $item->id;
             }
@@ -52,7 +53,6 @@
             <form id="clearform" name="clearform" action="" method="POST">
                 <button id="clearCart" name="clear" value="clear">Clear Cart</button>
             </form>
-            <br><a href=\"book_reviews.php?id=$id\"><button>See Reviews</button></a>
         </aside>
     </main>
 </body>
