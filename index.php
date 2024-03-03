@@ -23,7 +23,6 @@
                 
                 print "
                 <section class='tile'>
-                    $id = $item->id;
                     <img src=$item->image_location>
                     <h3>$item->title</h3>
                     <p>$item->author<br>
@@ -35,7 +34,7 @@
                         <button type='submit'>Add to Cart</button>
                         
                     </form>
-                    <br><a href=\"book_reviews.php?id=$id\"><button>See Reviews</button></a>
+                    <br><a href=\"book_reviews.php?id=$item->id\"><button>See Reviews</button></a>
                 </section>";
                 
             }
