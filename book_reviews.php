@@ -29,7 +29,7 @@
 
             $stmt = $pdo->query("SELECT * FROM `reviews` WHERE BookID = $id;");
             while ($row = $stmt->fetch()) {
-                echo $row['Rating']."<br />\n";
+                echo $row['Rating']."<br />\n\n";
                 echo $row['Review']."<br />\n";
             }
 
