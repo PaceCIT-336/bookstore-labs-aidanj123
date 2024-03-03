@@ -5,7 +5,8 @@
         <?php
             class Book {
                 public $id, $title, $author, $blurb, $image_location, $price;
-                    function class__construct($title, $author, $blurb, $image_location, $price) {
+                    function class__construct($id, $title, $author, $blurb, $image_location, $price) {
+                        $this->id = $id;
                         $this->title = $title;
                         $this->author = $author;
                         $this->blurb = $blurb;
