@@ -22,13 +22,18 @@
         <?php //include your code here
             $id = $_GET['id'];
             
+            $stmt = $pdo->query("SELECT * FROM `books` WHERE BookID = $id;");
+            while ($row = $stmt->fetch()) {
+                echo "<h3>".$row['Title']."</h3>\n";
+            }
+
             $stmt = $pdo->query("SELECT * FROM `reviews` WHERE BookID = $id;");
             while ($row = $stmt->fetch()) {
+                echo $row['Rating']."<br />\n";
                 echo $row['Review']."<br />\n";
             }
 
-            // $rating = htmlspecialchars($row['Rating']);
-            // $review = htmlspecialchars($row['Review']);
+
 
         ?>
 		<a href="index.php"><button>Back</button></a>
