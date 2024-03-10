@@ -15,6 +15,8 @@
             return $var;
         }
 
+        $pdo = new PDO($id, $rating, $review);
+
         if (!empty(($_POST['submit']))) {
             $stmt = $pdo->prepare("INSERT INTO 'reviews' (BookID,Rating,Review) VALUES ($id,$rating,$review)");
             $stmt->bindParam(1, $id, PDO::PARAM_INT);
