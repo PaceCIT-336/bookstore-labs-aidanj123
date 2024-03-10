@@ -35,6 +35,6 @@
         }
         
         ?>
-        <a href="review.php"><button type="button">Click Me!</button></a>
+        <p><a href="review.php"><button type="button">Click Me!</button></a></a>
     </body>
 </html>
