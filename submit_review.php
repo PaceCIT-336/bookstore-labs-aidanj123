@@ -17,7 +17,7 @@
 
 
         if (!empty(($_POST['submit']))) {
-            $stmt = $pdo->prepare("INSERT INTO 'reviews' (BookID,Rating,Review) VALUES (?,?,?)");
+            $stmt = $pdo->prepare("insert into 'reviews'(BookID,Rating,Review) values(?,?,?)");
 
             $id = $_POST['book'];
             $rating = $_POST['rating'];
