@@ -32,9 +32,11 @@
                         <input type='hidden' name='title' value=$item->title>
                         <input type='hidden' name='price' value=$item->price>
                         <button type='submit'>Add to Cart</button>
+                        
                     </form>
+                    <br><a href=\"book_reviews.php?id=$item->id\"><button>See Reviews</button></a>
                 </section>";
-    
+                
             }
         ?>
         <aside id="cart">
