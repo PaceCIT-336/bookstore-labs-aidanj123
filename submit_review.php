@@ -15,16 +15,20 @@
             return $var;
         }
 
-        $pdo = new PDO($id, $rating, $review);
 
         if (!empty(($_POST['submit']))) {
-            $stmt = $pdo->prepare("INSERT INTO 'reviews' (BookID,Rating,Review) VALUES ($id,$rating,$review)");
+            $stmt = $pdo->prepare("INSERT INTO 'reviews' (BookID,Rating,Review) VALUES (?,?,?)");
+
+            $id = $_POST['book'];
+            $rating = $_POST['rating'];
+            $review = $_POST['review'];
+
             $stmt->bindParam(1, $id, PDO::PARAM_INT);
             $stmt->bindParam(2, $rating, PDO::PARAM_INT);
             $stmt->bindParam(3, $review, PDO::PARAM_STR);
             $review = sanitizeString($_POST['review']);
             if ($review != '') {$review = NULL;}
-            $stmt->execute();
+            $stmt->execute([$id, $rating, $review]);
             if ($stmt->rowCount() == 1) {echo "Review accepted";}
         } else {
             header("Location: review.php"); 
