@@ -27,9 +27,11 @@
             $stmt->bindParam(2, $rating, PDO::PARAM_INT);
             $stmt->bindParam(3, $review, PDO::PARAM_STR);
             $review = sanitizeString($_POST['review']);
-            //if ($review != '') {$review = NULL;}
+            if ($review != '') {$review = NULL;}
             $stmt->execute([$id, $rating, $review]);
             if ($stmt->rowCount() == 1) {echo "Review accepted";}
+            echo $_POST['review'];
+            echo $review;
         } else {
             header("Location: review.php"); 
         }
